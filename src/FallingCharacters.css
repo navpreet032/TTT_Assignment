@@ -1,0 +1,28 @@
+.falling-characters-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .falling-character {
+    position: absolute;
+    top: -20px;
+    font-size: 30px;
+    color: #c41212;
+    pointer-events: auto;
+    animation: falling 5s linear infinite;
+  }
+  
+  @keyframes falling {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(110vh);
+    }
+  }
+  
