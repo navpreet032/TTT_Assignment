@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Word Count Analyzer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that allows you to analyze the word count in a text file. It retrieves the text from the [Terribly Tiny Tales](https://www.terriblytinytales.com/test.txt) website and displays the top 20 most frequent words in a bar chart.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To run this application locally, please follow these steps:
 
-### `npm start`
+1. Clone the repository: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+git clone https://github.com/navpreet032/TTT_Assignment.git
+```
+2. Install the dependencies:
+```bash
+npm install
+```
+3. Start the development server:
+```shell
+npm start
+```
+4. Open your browser and visit http://localhost:3000 to view the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Visit the Site
+If you want to visit the site directly, you can go to
 
-### `npm test`
+https://tinytailsassignment.netlify.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Components
+App
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The main component of the application is App.js. It uses the following components and libraries:
+Libraries
+```shell
+    React: A JavaScript library for building user interfaces.
+    react-csv: A library for generating CSV files from data.
+    react-apexcharts: A React wrapper for ApexCharts, which provides interactive charts.
+```
+## Material widget
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The following Material widget are used from the Material-UI library:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    IconButton: A button component with an icon.
+    CachedIcon: An icon component for the reload button.
+    InfoOutlinedIcon: An icon component for the information button.
+    Button: A button component.
+    Switch: A switch component.
+    Stack: A layout component that stacks its children horizontally or vertically.
+    FormControlLabel: A component to integrate an input with a label.
 
-### `npm run eject`
+## State and Hooks
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    useState: A hook for managing state variables.
+    
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Functions and Handlers
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    handleMouseOver: A handler function for mouseover event.
+    handleMouseOut: A handler function for mouseout event.
+    handleSubmit: An async function that retrieves the text from the provided URL, splits it into words, and counts the occurrences of each word. It updates the state variable wordCounts with the sorted word count data.
+    setSingleLetterAsWord: set the state of variable SingleLetterAsWord
+## 
+## Chart
+```shell
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The component uses ReactApexChart from react-apexcharts to render a bar chart. It uses the chartData and chartOptions variables to configure the chart.
+```
+## CSV Export
+```shell
 
-## Learn More
+The component uses CSVLink from react-csv to generate a CSV file from the word count data. It exports the data as csvData and allows the user to download the file.
+Usage
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Upon loading the application, you will see a submit button.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Click the submit button to retrieve the text from the Terribly Tiny Tales website and analyze its word count.
 
-### Code Splitting
+3. The top 20 most frequent words will be displayed in a bar chart.
+4. You can hover over the chart to see the exact count for each bar.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. Below the chart, you will find the following options:
+```shell
+  Export: Click this button to download the word count data as a CSV file.
+  Reload: Click this button to refresh the word count analysis.
+  Toggle: Switch this option on/off to include/exclude single characters as words.
+  Info: Hover over this icon to see additional information about the "Toggle" option.
+```
