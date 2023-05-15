@@ -72,7 +72,7 @@ The component uses ReactApexChart from react-apexcharts to render a bar chart. I
 The component uses CSVLink from react-csv to generate a CSV file from the word count data. It exports the data as csvData and allows the user to download the file.
 Usage
 ```
-
+## 
 1. Upon loading the application, you will see a submit button.
 
 2. Click the submit button to retrieve the text from the Terribly Tiny Tales website and analyze its word count.
